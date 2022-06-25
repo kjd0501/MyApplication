@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFEFE"
+    android:backgroundTint="#7E9A97"
+
+    tools:context="com.example.myapplication.MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:background="@color/purple_500"
+        app:popupTheme="@style/Theme.MyApplication.PopupOverlay"
+        app:title="                  Connected to your Robot"
+        app:titleMargin="4dp"
+        app:titleTextColor="#050505" />
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="652dp"
+        android:background="@color/teal_700"
+        app:popupTheme="@style/Theme.MyApplication.PopupOverlay"
+        app:title="                 Suction cups manipulation"
+        app:titleMargin="4dp"
+        app:titleTextColor="#050505" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="111dp"
+        android:layout_height="105dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="156dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="365dp"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#EA0909" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="111dp"
+        android:layout_height="105dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="246dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="288dp"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#FF8A80" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="111dp"
+        android:layout_height="105dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginEnd="231dp"
+        android:layout_marginBottom="288dp"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#FF8A80" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="111dp"
+        android:layout_height="105dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="156dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="475dp"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#FF8A80" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="192dp"
+        android:layout_height="94dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="123dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="168dp"
+        android:text="All suction cups on/off" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="192dp"
+        android:layout_height="94dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="123dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="52dp"
+        android:text="Perimeter cups on/middle cups off" />
+
+
+</RelativeLayout>
