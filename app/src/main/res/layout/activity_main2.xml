@@ -139,5 +139,25 @@
         android:layout_marginBottom="307dp"
         android:background="@drawable/circle_button" />
 
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="233dp"
+        android:layout_marginBottom="523dp"
+        android:text="Go to home orientation" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="524dp"
+        android:text="Raise End Effector" />
+
 
 </RelativeLayout>
