@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFEFE"
+        android:backgroundTint="#1BDAAE"
+
+        tools:context="com.example.myapplication.MainActivity"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="158dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="?attr/colorPrimary"
+            android:textAlignment="center"
+            app:popupTheme="@style/Theme.MyApplication.PopupOverlay"
+            app:title="                Connected to your Robot"
+            app:titleMargin="4dp"
+            app:titleTextColor="#050505" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="531dp"
+            android:background="#FFEB3B"
+            android:textAlignment="center"
+            app:popupTheme="@style/Theme.MyApplication.PopupOverlay"
+            app:title="          Advanced Manipulation Modes"
+            app:titleMargin="4dp"
+            app:titleTextColor="#050505" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="335dp"
+            android:layout_height="466dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="39dp"
+            android:layout_marginBottom="46dp"
+            android:background="@color/white" />
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
