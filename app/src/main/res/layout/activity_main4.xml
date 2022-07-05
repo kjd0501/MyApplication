@@ -37,12 +37,10 @@
         android:id="@+id/floatingActionButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/floatingActionButton3"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="0dp"
         android:layout_marginEnd="295dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="44dp"
         android:clickable="true"
         app:backgroundTint="#FFEB3B"
         app:srcCompat="@android:drawable/arrow_down_float" />

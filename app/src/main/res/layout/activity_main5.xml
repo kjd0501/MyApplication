@@ -15,8 +15,8 @@
         android:layout_height="72dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="296dp"
-        android:layout_marginBottom="610dp"
+        android:layout_marginEnd="317dp"
+        android:layout_marginBottom="503dp"
         android:clickable="true"
         android:rotation="0"
         android:rotationX="0"
@@ -55,11 +55,23 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="161dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="592dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="485dp"
         android:background="@drawable/circle_button"
         android:text="FW1" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton7"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="67dp"
+        android:layout_marginBottom="502dp"
+        android:clickable="true"
+        app:backgroundTint="#FFEB3B"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
 
     <TextView
         android:id="@+id/textView"
@@ -71,24 +83,11 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:background="?attr/colorPrimary"
-        android:textAlignment="center"
+        android:background="@color/purple_500"
         app:popupTheme="@style/Theme.MyApplication.PopupOverlay"
         app:title="                    Connected to your Robot"
         app:titleMargin="4dp"
         app:titleTextColor="#050505" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton7"
-        android:layout_width="74dp"
-        android:layout_height="72dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="66dp"
-        android:layout_marginBottom="609dp"
-        android:clickable="true"
-        app:backgroundTint="#FFEB3B"
-        app:srcCompat="@android:drawable/ic_menu_rotate" />
 
 
 </RelativeLayout>
