@@ -1,7 +1,13 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.text.format.Formatter;
+import android.view.View;
 import android.widget.Button;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -31,6 +37,79 @@ public class MainActivity2 extends AppCompatActivity {
         bw1 = (Button) findViewById(R.id.bw1);
         bw2 = (Button) findViewById(R.id.bw2);
         bw3 = (Button) findViewById(R.id.bw3);
+
+        drillMode.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                //drilling activity
+            }
+        });
+
+        suctionCups.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+
+                // start the activity connect to the specified class
+                startActivity(intent);
+            }
+        });
+
+        goToHomeOrientation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //home orientation call
+            }
+        });
+
+        raiseEndEffector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //raise end effector call
+            }
+        });
+
+        fw1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //forward 1 call
+            }
+        });
+
+        fw2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //forward 2 call
+            }
+        });
+
+        fw3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //forward 3 call
+            }
+        });
+
+        bw1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //backward 1 call
+            }
+        });
+
+        bw2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //backward 2 call
+            }
+        });
+
+        bw3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //backward 3 call
+            }
+        });
     }
 }
 
