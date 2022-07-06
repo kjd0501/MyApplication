@@ -26,7 +26,7 @@
         app:titleTextColor="#050505" />
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/fw1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -39,7 +39,7 @@
         android:text="FW1" />
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/fw3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -52,7 +52,7 @@
         android:text="FW3" />
 
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/fw2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -65,7 +65,7 @@
         android:text="FW2" />
 
     <Button
-        android:id="@+id/btn3"
+        android:id="@+id/bw2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -78,7 +78,7 @@
         android:text="BW2" />
 
     <Button
-        android:id="@+id/btn4"
+        android:id="@+id/bw3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -91,7 +91,7 @@
         android:text="BW3" />
 
     <Button
-        android:id="@+id/btn5"
+        android:id="@+id/bw1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -104,7 +104,7 @@
         android:text="BW1" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/drillMode"
         android:layout_width="137dp"
         android:layout_height="91dp"
         android:layout_alignParentStart="true"
@@ -116,7 +116,7 @@
         android:text="Drill mode" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/suctionCups"
         android:layout_width="137dp"
         android:layout_height="91dp"
         android:layout_alignParentStart="true"
@@ -130,17 +130,17 @@
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="81dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="169dp"
         android:layout_marginEnd="160dp"
-        android:layout_marginBottom="307dp"
+        android:layout_marginBottom="294dp"
         android:background="@drawable/circle_button" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/Home"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -150,7 +150,7 @@
         android:text="Go to home orientation" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/raiseEE"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
