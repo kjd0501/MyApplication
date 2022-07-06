@@ -9,8 +9,10 @@
 
     tools:context="com.example.myapplication.MainActivity">
 
+    labelText = "FW1"
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton8"
+        android:id="@+id/aclk"
         android:layout_width="74dp"
         android:layout_height="72dp"
         android:layout_alignParentEnd="true"
@@ -25,7 +27,7 @@
         app:srcCompat="@android:drawable/ic_menu_rotate" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/drillMode"
         android:layout_width="137dp"
         android:layout_height="91dp"
         android:layout_alignParentStart="true"
@@ -37,7 +39,7 @@
         android:text="Drill mode" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/suctionCups"
         android:layout_width="137dp"
         android:layout_height="91dp"
         android:layout_alignParentStart="true"
@@ -49,7 +51,7 @@
         android:text="Suction cups" />
 
     <Button
-        android:id="@+id/btn6"
+        android:id="@+id/central"
         android:layout_width="91dp"
         android:layout_height="89dp"
         android:layout_alignParentStart="true"
@@ -62,7 +64,7 @@
         android:text="FW1" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton7"
+        android:id="@+id/clk"
         android:layout_width="74dp"
         android:layout_height="72dp"
         android:layout_alignParentEnd="true"
@@ -73,11 +75,6 @@
         app:backgroundTint="#FFEB3B"
         app:srcCompat="@android:drawable/ic_menu_rotate" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
