@@ -22,6 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import java.util.Map;
 import java.util.HashMap;
+import android.net.wifi.WifiConfiguration;
 import java.io.*;
 import android.util.Log;
 
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 if (wifi.isWifiEnabled()){
                     String ipAddress = Formatter.formatIpAddress(wifi.getConnectionInfo().getIpAddress());
                     showToast(ipAddress);
+
+
                     connectedThread2 = new ConnectedThread2(ipAddress);
                     connectedThread2.send(1,ip);
 
@@ -159,6 +162,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(A2);
     }
 }
+
+
+
+
 
 
 
