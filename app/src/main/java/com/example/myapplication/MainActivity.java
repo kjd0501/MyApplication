@@ -22,6 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import java.util.Map;
 import java.util.HashMap;
+import android.net.wifi.WifiConfiguration;
 import java.io.*;
 import android.util.Log;
 
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 if (wifi.isWifiEnabled()){
                     String ipAddress = Formatter.formatIpAddress(wifi.getConnectionInfo().getIpAddress());
                     showToast(ipAddress);
+
+
                     connectedThread2 = new ConnectedThread2(ipAddress);
                     connectedThread2.send(1,ip);
 
@@ -163,34 +166,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//import android.content.Intent;
-//import androidx.appcompat.app.AppCompatActivity;
-//import android.os.Bundle;
-//import android.view.View;
-//import android.widget.Button;
-//
-//public class MainActivity extends AppCompatActivity {
-//    private Button button;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//        button = (Button) findViewById(R.id.button);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openActivity2();
-//            }
-//        });
-//    }
-//
-//    public void openActivity2() {
-//        Intent intent = new Intent(this, MainActivity2.class);
-//        startActivity(intent);
-//    }
-//}
 
 
 
