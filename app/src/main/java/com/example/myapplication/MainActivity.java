@@ -22,6 +22,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import java.util.Map;
 import java.util.HashMap;
+import android.view.View.OnTouchListener;
+import android.view.MotionEvent;
 import android.net.wifi.WifiConfiguration;
 import java.io.*;
 import android.util.Log;
@@ -30,6 +32,7 @@ import android.util.Log;
 public class MainActivity extends AppCompatActivity {
     private Button bt;
     private Button wf;
+    private Button but;
     BluetoothAdapter BA;
     String ip="120.33.33.22";
     private static final int REQUEST_ENABLE_BT = 0;
@@ -41,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bt = (Button) findViewById(R.id.bluetooth);
         wf = (Button) findViewById(R.id.wifi);
+        but=(Button) findViewById(R.id.button);
         BA = BluetoothAdapter.getDefaultAdapter();
+
         int ivar = 111;
         String str = String.valueOf(ivar);
         if (BA == null) {
@@ -49,6 +54,23 @@ public class MainActivity extends AppCompatActivity {
             finish();
             return;
         }
+        but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                wf.setVisibility(View.VISIBLE);
+                bt.setVisibility(View.GONE);
+                but.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bt.setVisibility(View.VISIBLE);
+                        wf.setVisibility(View.GONE);
+                        return;
+                    }
+                });
+                return;
+            }
+        });
+
         wf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
                     connectedThread2 = new ConnectedThread2(ipAddress);
                     connectedThread2.send(1,ip);
-
 
                 }
                 else
@@ -125,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void send(int cmdText, String ip) {
             Log.e("Status", "Sending data " + cmdText);
+            ip="www.google.com";
             String url = "http://" + ip + "/post";
             showToast("in send");
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
@@ -138,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             Log.e("Status", error.toString());
+                            showToast("error");
                         }
                     }) {
                 @Override
@@ -146,11 +169,13 @@ public class MainActivity extends AppCompatActivity {
                     String value = String.valueOf(cmdText);
                     params.put("data", value);
                     Log.e("Status", value);
+                    //showToast("map");
                     return params;
                 }
             };
             RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
             requestQueue.add(stringRequest);
+            showToast("end");
         }
 
 
