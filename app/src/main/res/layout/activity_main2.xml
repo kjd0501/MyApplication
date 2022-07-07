@@ -25,81 +25,164 @@
         app:titleMargin="4dp"
         app:titleTextColor="#050505" />
 
-    <Button
-        android:id="@+id/fw1"
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/clk1"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="440dp"
+        android:clickable="true"
+        app:backgroundTint="#FFEB3B"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/aclk1"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="440dp"
+        android:clickable="true"
+        android:rotation="0"
+        android:rotationX="0"
+        android:rotationY="180"
+        app:backgroundTint="#FFEB3B"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/clk2"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="187dp"
+        android:layout_marginBottom="275dp"
+        android:clickable="true"
+        app:backgroundTint="#FFEB3B"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/aclk2"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="304dp"
+        android:layout_marginBottom="277dp"
+        android:clickable="true"
+        android:rotation="0"
+        android:rotationX="0"
+        android:rotationY="180"
+        app:backgroundTint="#FFEB3B"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/clk3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="277dp"
+        android:clickable="true"
+        app:backgroundTint="#FFEB3B"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/aclk3"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="277dp"
+        android:clickable="true"
+        android:rotation="0"
+        android:rotationX="0"
+        android:rotationY="180"
+        app:backgroundTint="#FFEB3B"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+    <Button
+        android:id="@+id/fw1"
+        android:layout_width="59dp"
+        android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="176dp"
-        android:layout_marginEnd="170dp"
-        android:layout_marginBottom="432dp"
+        android:layout_marginStart="154dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="438dp"
         android:background="@drawable/circle_button"
         android:text="FW1" />
 
     <Button
         android:id="@+id/fw3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="61dp"
+        android:layout_height="59dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="270dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="255dp"
+        android:layout_marginStart="242dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="274dp"
         android:background="@drawable/circle_button"
         android:text="FW3" />
 
     <Button
         android:id="@+id/fw2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="58dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="79dp"
-        android:layout_marginEnd="267dp"
-        android:layout_marginBottom="253dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="243dp"
+        android:layout_marginBottom="274dp"
         android:background="@drawable/circle_button"
         android:text="FW2" />
 
     <Button
         android:id="@+id/bw2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="59dp"
+        android:layout_height="58dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="270dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="358dp"
+        android:layout_marginStart="243dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="374dp"
         android:background="@drawable/circle_button"
         android:text="BW2" />
 
     <Button
         android:id="@+id/bw3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="59dp"
+        android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="79dp"
-        android:layout_marginEnd="267dp"
-        android:layout_marginBottom="359dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="376dp"
         android:background="@drawable/circle_button"
         android:text="BW3" />
 
     <Button
         android:id="@+id/bw1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="176dp"
-        android:layout_marginEnd="170dp"
-        android:layout_marginBottom="179dp"
+        android:layout_marginStart="154dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="202dp"
         android:background="@drawable/circle_button"
         android:text="BW1" />
 
@@ -129,14 +212,14 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="81dp"
+        android:layout_width="47dp"
+        android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="169dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="294dp"
+        android:layout_marginStart="157dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="332dp"
         android:background="@drawable/circle_button" />
 
     <Button
