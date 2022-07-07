@@ -46,6 +46,7 @@
             app:titleTextColor="#050505" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/manipList"
             android:layout_width="335dp"
             android:layout_height="466dp"
             android:layout_alignParentEnd="true"

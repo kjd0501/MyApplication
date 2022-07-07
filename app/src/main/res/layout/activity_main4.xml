@@ -10,7 +10,7 @@
     tools:context="com.example.myapplication.MainActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton6"
+        android:id="@+id/extraFineUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -22,7 +22,7 @@
         app:srcCompat="@android:drawable/arrow_up_float" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton5"
+        android:id="@+id/fineUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -34,7 +34,7 @@
         app:srcCompat="@android:drawable/arrow_up_float" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
+        android:id="@+id/extraFineDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -46,7 +46,7 @@
         app:srcCompat="@android:drawable/arrow_down_float" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/largeDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -58,7 +58,7 @@
         app:srcCompat="@android:drawable/arrow_down_float" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/fineDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -98,7 +98,7 @@
         android:background="@drawable/circle_button" />
 
     <Button
-        android:id="@+id/btn4"
+        android:id="@+id/bw3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -111,7 +111,7 @@
         android:text="BW3" />
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/fw1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -124,7 +124,7 @@
         android:text="FW1" />
 
     <Button
-        android:id="@+id/btn3"
+        android:id="@+id/bw2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -137,7 +137,7 @@
         android:text="BW2" />
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/fw3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -150,7 +150,7 @@
         android:text="FW3" />
 
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/fw2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -163,7 +163,7 @@
         android:text="FW2" />
 
     <Button
-        android:id="@+id/btn5"
+        android:id="@+id/bw1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -176,7 +176,7 @@
         android:text="BW1" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/circular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -188,7 +188,7 @@
         android:text="Circular" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/rectangular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -200,7 +200,7 @@
         android:text="RECTANGULAR" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/addNew"
         android:layout_width="wrap_content"
         android:layout_height="83dp"
         android:layout_alignParentEnd="true"
@@ -245,7 +245,7 @@
         android:textSize="24sp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton4"
+        android:id="@+id/largeup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

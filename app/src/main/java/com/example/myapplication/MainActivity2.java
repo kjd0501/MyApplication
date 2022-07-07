@@ -23,6 +23,9 @@ public class MainActivity2 extends AppCompatActivity {
     private Button bw2;
     private Button bw3;
 
+    private long lastTouchTime = 0;
+    private long currentTouchTime = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,10 +51,10 @@ public class MainActivity2 extends AppCompatActivity {
         suctionCups.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+                Intent act3 = new Intent(MainActivity2.this, MainActivity3.class);
 
                 // start the activity connect to the specified class
-                startActivity(intent);
+                startActivity(act3);
             }
         });
 
@@ -72,21 +75,57 @@ public class MainActivity2 extends AppCompatActivity {
         fw1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //forward 1 call
+                lastTouchTime = currentTouchTime;
+                currentTouchTime = System.currentTimeMillis();
+
+                if (currentTouchTime - lastTouchTime < 250) {
+                    Intent act5 = new Intent(MainActivity2.this, MainActivity5.class);
+                    // start the activity connect to the specified class
+                    startActivity(act5);
+
+                    lastTouchTime = 0;
+                    currentTouchTime = 0;
+                } else {
+                    //forward 1 call
+                }
             }
         });
 
         fw2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //forward 2 call
+                lastTouchTime = currentTouchTime;
+                currentTouchTime = System.currentTimeMillis();
+
+                if (currentTouchTime - lastTouchTime < 250) {
+                    Intent act5 = new Intent(MainActivity2.this, MainActivity5.class);
+                    // start the activity connect to the specified class
+                    startActivity(act5);
+
+                    lastTouchTime = 0;
+                    currentTouchTime = 0;
+                } else {
+                    //forward 2 call
+                }
             }
         });
 
         fw3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //forward 3 call
+                lastTouchTime = currentTouchTime;
+                currentTouchTime = System.currentTimeMillis();
+
+                if (currentTouchTime - lastTouchTime < 250) {
+                    Intent act5 = new Intent(MainActivity2.this, MainActivity5.class);
+                    // start the activity connect to the specified class
+                    startActivity(act5);
+
+                    lastTouchTime = 0;
+                    currentTouchTime = 0;
+                } else {
+                    //forward 3 call
+                }
             }
         });
 
@@ -110,6 +149,7 @@ public class MainActivity2 extends AppCompatActivity {
                 //backward 3 call
             }
         });
+
     }
 }
 
