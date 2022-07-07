@@ -33,11 +33,6 @@
             android:label="@string/title_activity_main6"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity
-            android:name=".MainActivity5"
-            android:exported="false"
-            android:label="@string/title_activity_main5"
-            android:theme="@style/Theme.MyApplication.NoActionBar" />
-        <activity
             android:name=".MainActivity4"
             android:exported="true"
             android:label="@string/title_activity_main4"

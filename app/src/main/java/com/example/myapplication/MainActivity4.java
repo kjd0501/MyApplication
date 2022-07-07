@@ -95,57 +95,21 @@ public class MainActivity4 extends AppCompatActivity {
         fw1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lastTouchTime = currentTouchTime;
-                currentTouchTime = System.currentTimeMillis();
-
-                if (currentTouchTime - lastTouchTime < 250) {
-                    Intent act5 = new Intent(MainActivity4.this, MainActivity5.class);
-                    // start the activity connect to the specified class
-                    startActivity(act5);
-
-                    lastTouchTime = 0;
-                    currentTouchTime = 0;
-                } else {
-                    //forward 1 call
-                }
+                //forward 1 action
             }
         });
 
         fw2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lastTouchTime = currentTouchTime;
-                currentTouchTime = System.currentTimeMillis();
-
-                if (currentTouchTime - lastTouchTime < 250) {
-                    Intent act5 = new Intent(MainActivity4.this, MainActivity5.class);
-                    // start the activity connect to the specified class
-                    startActivity(act5);
-
-                    lastTouchTime = 0;
-                    currentTouchTime = 0;
-                } else {
-                    //forward 2 call
-                }
+                //forward 2 action
             }
         });
 
         fw3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lastTouchTime = currentTouchTime;
-                currentTouchTime = System.currentTimeMillis();
-
-                if (currentTouchTime - lastTouchTime < 250) {
-                    Intent act5 = new Intent(MainActivity4.this, MainActivity5.class);
-                    // start the activity connect to the specified class
-                    startActivity(act5);
-
-                    lastTouchTime = 0;
-                    currentTouchTime = 0;
-                } else {
-                    //forward 3 call
-                }
+                //forward 3 action
             }
         });
 
