@@ -16,7 +16,7 @@ import android.util.Log;
 import android.os.ParcelUuid;
 import android.view.View;
 import android.view.View.OnClickListener;
-
+import android.os.AsyncTask;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -217,71 +217,83 @@ public class Device_NetworkList extends Activity {
 
                 return;
             }
-            //mBtAdapter.cancelDiscovery();
+            mBtAdapter.cancelDiscovery();
 
             // Get the device MAC address, which is the last 17 chars in the View
 
             String info = ((TextView) v).getText().toString();
             String address = info.substring(info.length() - 17);
 
-            BluetoothDevice device1 = mBtAdapter.getRemoteDevice(address);
+            BluetoothDevice device = mBtAdapter.getRemoteDevice(address);
             showToast(address);
-            createConnectThread = new CreateConnectThread(mBtAdapter, address);
-            createConnectThread.run();
+            //createConnectThread = new CreateConnectThread(mBtAdapter, address);
+            //createConnectThread.run();
             //CreateConnectThread=new CreateConnectThread(mBtAdapter,address);
             //CreateConnectThread.start();
 
+            BluetoothSocket tmp = null;
 
-//            ParcelUuid[] uuids = device1.getUuids();
-//            MY_UUID = uuids[0].getUuid();
-//            showToast(MY_UUID.toString());
-//
-//            for (ParcelUuid parcelUuid : uuids) {
-//                Log.v("BluetoothService", "UUID: " + parcelUuid.getUuid().toString());
-//            }
-//
-//
-//            try {
-//                socket = device1.createRfcommSocketToServiceRecord(MY_UUID);
-//                //socket = device1.createRfcommSocketToServiceRecord(uuids[0].getUuid());
-//                showToast("created");
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//                showToast("not created");
-//            }
-//            try {
-//                if (ContextCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//                    ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 0);
-//                    showToast("granted");
-//                }
-//
-//                socket.connect();
-//
-//                showToast("connected socket");
-//
-//                InputStream mmInStream;
-//                OutputStream mmOutStream;
-//                // Get the BluetoothSocket input and output streams
-//                try {
-//                    mmInStream = socket.getInputStream();
-//                    mmOutStream = socket.getOutputStream();
-//                } catch (IOException e) {
-//                    showToast("error with stream");
-//                    //return;
-//                }
-//                showToast("connected");
-//            } catch (IOException connEx) {
-//                Log.e(TAG, "Could not close the client socket", connEx);
-//
-//                try {
-//                    socket.close();
-//
-//                } catch (IOException closeException) {
-//                    //Error
-//
-//                }
-//            }
-            //showToast(address)
+            if (ActivityCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+
+                ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 0);
+
+                return;
+            }
+            //UUID uuid = device.getUuids()[0].getUuid();
+            UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+
+            try {
+                tmp = device.createRfcommSocketToServiceRecord(uuid);
+
+            } catch (IOException e) {
+                Log.e(TAG, "Socket create failed", e);
+            }
+            socket = tmp;
+
+            AsyncTask.execute(new Runnable() {
+                @Override
+                public void run() {
+                    String message = "d";
+                    byte[] toSend = message.getBytes();
+                    BluetoothAdapter bA = BluetoothAdapter.getDefaultAdapter();
+                    if (ActivityCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 0);
+                        return;
+                    }
+                    bA.cancelDiscovery();
+                    try {
+                        socket.connect();
+                        showToast("connected");
+                        openActivity();
+                        // Get the BluetoothSocket input and output streams
+                        try {
+                            input = socket.getInputStream();
+                            output = socket.getOutputStream();
+                            //showToast(toSend.toString());
+                            output.write(toSend);
+                        } catch (IOException e) {
+                            showToast("error with stream");
+                            //return;
+                        }
+
+                        Log.e("status", "connected");
+                    } catch (IOException connectException) {
+                        try {
+                            socket.close();
+                            if (socket.isConnected()) {
+                                showToast("already connected");
+                            }
+                            showToast("failed to connect");
+                            Log.e("status", "failed to connect");
+                        } catch (IOException closeException) {
+                            Log.e(TAG, "could not close socket", closeException);
+
+                        }
+                        return;
+                    }
+                }
+            });
+
         }
     };
 
@@ -295,9 +307,6 @@ public class Device_NetworkList extends Activity {
         public void onReceive(Context context, Intent intent) {
 
             String action = intent.getAction();
-//            if (BluetoothAdapter.ACTION_DISCOVERY_STARTED.equals(action)){
-//                showToast("it started");
-//            }
             // When discovery finds a device
 
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
@@ -305,15 +314,9 @@ public class Device_NetworkList extends Activity {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 // If it's already paired, skip it, because it's been listed already
                 if (ActivityCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
+
                     ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 0);
 
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
                     return;
                 }
                 if (device.getBondState() != BluetoothDevice.BOND_BONDED) {
@@ -321,15 +324,6 @@ public class Device_NetworkList extends Activity {
                 }
                 // When discovery is finished, change the Activity title
             }
-//             else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
-//                showToast("it finished");
-//                setProgressBarIndeterminateVisibility(false);
-//                setTitle("select device");
-//                if (mNewDevicesArrayAdapter.getCount() == 0) {
-//                    // String noDevices = getResources().getText(R.string.none_found).toString();
-//                    //mNewDevicesArrayAdapter.add(noDevices);
-//                }
-//            }
 
         }
     };
@@ -356,7 +350,10 @@ public class Device_NetworkList extends Activity {
         }
     };
 
-
+    public void openActivity() {
+        Intent act2 = new Intent(this, MainActivity2.class);
+        startActivity(act2);
+    }
     public class CreateConnectThread extends Thread {
         public CreateConnectThread(BluetoothAdapter bA, String address) {
             BluetoothDevice device = bA.getRemoteDevice(address);
@@ -384,48 +381,49 @@ public class Device_NetworkList extends Activity {
 
 
 
-        @Override
-        public void run() {
-            super.run();
-            //showToast("in run");
-            String message="d";
-            byte[] toSend = message.getBytes();
-            BluetoothAdapter bA = BluetoothAdapter.getDefaultAdapter();
-            if (ActivityCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 0);
-                return;
-            }
-            bA.cancelDiscovery();
-            try{
-                socket.connect();
-                showToast("connected");
-                // Get the BluetoothSocket input and output streams
+            @Override
+            public void run () {
+                super.run();
+                //showToast("in run");
+                String message = "d";
+                byte[] toSend = message.getBytes();
+                BluetoothAdapter bA = BluetoothAdapter.getDefaultAdapter();
+                if (ActivityCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 0);
+                    return;
+                }
+                bA.cancelDiscovery();
                 try {
-                    input = socket.getInputStream();
-                    output = socket.getOutputStream();
-                    //showToast(toSend.toString());
-                    output.write(toSend);
-                } catch (IOException e) {
-                    showToast("error with stream");
-                    //return;
-                }
-
-                Log.e("status","connected");
-            }catch(IOException connectException){
-                try{
-                    socket.close();
-                    if(socket.isConnected()){
-                        showToast("already connected");
+                    socket.connect();
+                    showToast("connected");
+                    // Get the BluetoothSocket input and output streams
+                    try {
+                        input = socket.getInputStream();
+                        output = socket.getOutputStream();
+                        //showToast(toSend.toString());
+                        output.write(toSend);
+                    } catch (IOException e) {
+                        showToast("error with stream");
+                        //return;
                     }
-                    showToast("failed to connect");
-                    Log.e("status","failed to connect");
-                }catch(IOException closeException){
-                    Log.e(TAG, "could not close socket",closeException);
 
+                    Log.e("status", "connected");
+                } catch (IOException connectException) {
+                    try {
+                        socket.close();
+                        if (socket.isConnected()) {
+                            showToast("already connected");
+                        }
+                        showToast("failed to connect");
+                        Log.e("status", "failed to connect");
+                    } catch (IOException closeException) {
+                        Log.e(TAG, "could not close socket", closeException);
+
+                    }
+                    return;
                 }
-                return;
             }
-        }
+
         public void cancel(){
             try{
                 socket.close();

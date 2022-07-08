@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void openActivity2() {
-        Intent A2 = new Intent(this, MainActivity2.class);
+        Intent A2 = new Intent(this, Device_NetworkList.class);
         startActivity(A2);
     }
 }
