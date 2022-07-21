@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.WifiManager;
@@ -10,6 +12,11 @@ import android.text.format.Formatter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import com.example.myapplication.Device_NetworkList;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -30,12 +37,20 @@ public class MainActivity2 extends AppCompatActivity {
     private FloatingActionButton clk3;
     private FloatingActionButton aclk3;
     int rot;
-
+    private BluetoothSocket s;
+    OutputStream out;
     private long lastTouchTime = 0;
     private long currentTouchTime = 0;
 
+    private void showToast(String msg){
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        s=Device_NetworkList.socket;
+        out=Device_NetworkList.output;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         drillMode = (Button) findViewById(R.id.drillMode);
@@ -100,6 +115,14 @@ public class MainActivity2 extends AppCompatActivity {
         fw1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String message="f";
+                byte[] toSend = message.getBytes();
+                try {
+                    out.write(toSend);
+                    showToast("yay");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 lastTouchTime = currentTouchTime;
                 currentTouchTime = System.currentTimeMillis();
 

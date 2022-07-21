@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 
+import static android.content.ContentValues.TAG;
+
 import android.Manifest;
 import android.net.wifi.WifiManager;
 import android.bluetooth.BluetoothAdapter;
@@ -9,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.text.format.Formatter;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +29,7 @@ import android.view.View.OnTouchListener;
 import android.view.MotionEvent;
 import android.net.wifi.WifiConfiguration;
 import java.io.*;
+import java.net.*;
 import android.util.Log;
 
 
@@ -47,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         but=(Button) findViewById(R.id.button);
         BA = BluetoothAdapter.getDefaultAdapter();
 
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                .permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         int ivar = 111;
         String str = String.valueOf(ivar);
         if (BA == null) {
@@ -78,10 +85,26 @@ public class MainActivity extends AppCompatActivity {
                 if (wifi.isWifiEnabled()){
                     String ipAddress = Formatter.formatIpAddress(wifi.getConnectionInfo().getIpAddress());
                     showToast(ipAddress);
+                    try{
+                        Socket s = new Socket("10.248.128.125",6666);
+                        showToast("sent1");
+
+                        DataOutputStream dout=new DataOutputStream(s.getOutputStream());
+                        showToast("sent2");
+
+                        dout.writeUTF("Hello");
+                        dout.flush();
+                        dout.close();
+                        showToast("sent");
+                        s.close();
+                    }catch(Exception e){
+                        Log.e(TAG, "failed", e);
+                        showToast("not sent");
+                    }
 
 
-                    connectedThread2 = new ConnectedThread2(ipAddress);
-                    connectedThread2.send(1,ip);
+                    //connectedThread2 = new ConnectedThread2(ipAddress);
+                    //connectedThread2.send(1,ip);
 
                 }
                 else
