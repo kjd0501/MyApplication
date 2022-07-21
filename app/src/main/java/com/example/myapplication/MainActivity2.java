@@ -14,9 +14,11 @@ import android.widget.Button;
 import android.widget.Toast;
 import com.example.myapplication.Device_NetworkList;
 
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.Socket;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -37,8 +39,10 @@ public class MainActivity2 extends AppCompatActivity {
     private FloatingActionButton clk3;
     private FloatingActionButton aclk3;
     int rot;
-    private BluetoothSocket s;
-    OutputStream out;
+    private BluetoothSocket bs;
+    private OutputStream out;
+    private Socket sock;
+    private DataOutputStream dout;
     private long lastTouchTime = 0;
     private long currentTouchTime = 0;
 
@@ -49,7 +53,9 @@ public class MainActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        s=Device_NetworkList.socket;
+        bs=Device_NetworkList.socket;
+        sock=MainActivity.s;
+        dout=MainActivity.dout;
         out=Device_NetworkList.output;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
@@ -78,6 +84,133 @@ public class MainActivity2 extends AppCompatActivity {
         aclk3.setVisibility(View.GONE);
 
 
+
+        clk1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //clockwise rotation 1 call
+                String message="7";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                    out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        aclk1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //counter clockwise rotation 1 call
+                String message="8";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                        out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        clk2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //clockwise rotation 2 call
+                String message="9";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                        out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        aclk2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //counter clockwise rotation 2 call
+                String message="10";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                        out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        clk3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //clockwise rotation 3 call
+                String message="11";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                        out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        aclk3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //counter clockwise rotation 3 call
+                String message="12";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                        out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         drillMode.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -102,6 +235,21 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //home orientation call
+                String message="13";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                        out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -109,20 +257,28 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //raise end effector call
+                String message="14";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                        out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
         fw1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message="f";
-                byte[] toSend = message.getBytes();
-                try {
-                    out.write(toSend);
-                    showToast("yay");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
                 lastTouchTime = currentTouchTime;
                 currentTouchTime = System.currentTimeMillis();
 
@@ -157,6 +313,21 @@ public class MainActivity2 extends AppCompatActivity {
                     currentTouchTime = 0;
                 } else {
                     //forward 1 call
+                    String message="1";
+                    byte[] toSend = message.getBytes();
+                    try {
+                        if(bs.isConnected()){
+                            out.write(toSend);
+                        }
+                        else{
+                            dout.writeUTF(message);
+                            dout.flush();
+                            //dout.close();
+                        }
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -198,6 +369,21 @@ public class MainActivity2 extends AppCompatActivity {
                     currentTouchTime = 0;
                 } else {
                     //forward 2 call
+                    String message="3";
+                    byte[] toSend = message.getBytes();
+                    try {
+                        if(bs.isConnected()){
+                            out.write(toSend);
+                        }
+                        else{
+                            dout.writeUTF(message);
+                            dout.flush();
+                            //dout.close();
+                        }
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -239,6 +425,21 @@ public class MainActivity2 extends AppCompatActivity {
                     currentTouchTime = 0;
                 } else {
                     //forward 3 call
+                    String message="5";
+                    byte[] toSend = message.getBytes();
+                    try {
+                        if(bs.isConnected()){
+                            out.write(toSend);
+                        }
+                        else{
+                            dout.writeUTF(message);
+                            dout.flush();
+                            //dout.close();
+                        }
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -247,6 +448,21 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //backward 1 call
+                String message="2";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                        out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -254,6 +470,21 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //backward 2 call
+                String message="4";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                        out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -261,6 +492,21 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //backward 3 call
+                String message="6";
+                byte[] toSend = message.getBytes();
+                try {
+                    if(bs.isConnected()){
+                        out.write(toSend);
+                    }
+                    else{
+                        dout.writeUTF(message);
+                        dout.flush();
+                        //dout.close();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 

@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private Button bt;
     private Button wf;
     private Button but;
+    public static DataOutputStream dout;
+    public static Socket s;
     BluetoothAdapter BA;
     String ip="120.33.33.22";
     private static final int REQUEST_ENABLE_BT = 0;
@@ -48,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bt = (Button) findViewById(R.id.bluetooth);
         wf = (Button) findViewById(R.id.wifi);
-        but=(Button) findViewById(R.id.button);
         BA = BluetoothAdapter.getDefaultAdapter();
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
@@ -61,22 +62,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
             return;
         }
-        but.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                wf.setVisibility(View.VISIBLE);
-                bt.setVisibility(View.GONE);
-                but.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        bt.setVisibility(View.VISIBLE);
-                        wf.setVisibility(View.GONE);
-                        return;
-                    }
-                });
-                return;
-            }
-        });
+
 
         wf.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,10 +72,11 @@ public class MainActivity extends AppCompatActivity {
                     String ipAddress = Formatter.formatIpAddress(wifi.getConnectionInfo().getIpAddress());
                     showToast(ipAddress);
                     try{
-                        Socket s = new Socket("10.248.128.125",6666);
+                        //change ip address, this is just for testing
+                        s = new Socket("10.248.128.125",6666);
                         showToast("sent1");
 
-                        DataOutputStream dout=new DataOutputStream(s.getOutputStream());
+                        dout=new DataOutputStream(s.getOutputStream());
                         showToast("sent2");
 
                         dout.writeUTF("Hello");

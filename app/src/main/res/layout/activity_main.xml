@@ -49,15 +49,5 @@
         android:layout_marginBottom="239dp"
         android:text="Bluetooth" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="268dp"
-        android:layout_marginBottom="509dp"
-        android:text="Button" />
-
 
 </RelativeLayout>
