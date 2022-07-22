@@ -13,10 +13,8 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.os.ParcelUuid;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.os.AsyncTask;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -29,13 +27,9 @@ import java.io.IOException;
 import java.util.UUID;
 import java.io.InputStream;
 import java.io.OutputStream;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
 import static android.content.ContentValues.TAG;
-
 import java.util.Set;
 
 
@@ -57,15 +51,8 @@ public class Device_NetworkList extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_device_network_list);
-
-
-        // Set result CANCELED in case the user backs out
-        //setResult(Activity.RESULT_CANCELED);
-        // Initialize the button to perform device discovery
         Button scanButton = (Button) findViewById(R.id.button_scan);
-
         scanButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 doDiscovery();
@@ -86,17 +73,7 @@ public class Device_NetworkList extends Activity {
         ListView newDevicesListView = (ListView) findViewById(R.id.new_devices);
         newDevicesListView.setAdapter(mNewDevicesArrayAdapter);
         newDevicesListView.setOnItemClickListener(mDeviceClickListener);
-        // Register for broadcasts when a device is discovered
-//        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-//        this.registerReceiver(mReceiver, filter);
-//
-//
-//        // Register for broadcasts when discovery has finished
-//        IntentFilter filter1 = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
-//        //this.registerReceiver(mReceiver2, filter1);
-//
-//        IntentFilter filter0 = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_STARTED);
-//        this.registerReceiver(mReceiver1, filter0);
+
         // Get the local Bluetooth adapter
         mBtAdapter = BluetoothAdapter.getDefaultAdapter();
         // Get a set of currently paired devices
@@ -136,11 +113,6 @@ public class Device_NetworkList extends Activity {
                 //    ActivityCompat#requestPermissions
                 ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 0);
 
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
 
             }
             mBtAdapter.cancelDiscovery();
@@ -168,21 +140,14 @@ public class Device_NetworkList extends Activity {
             //    ActivityCompat#requestPermissions
             ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 3);
             showToast("scanning permission");
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
             return;
         }
         if (mBtAdapter.isDiscovering()) {
             mBtAdapter.cancelDiscovery();
 
         }
-        // Request discover from BluetoothAdapter
-        //ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 3);
-        //ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 3);
-        //showToast("scanning location");
+
         if (ContextCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
         }
@@ -229,71 +194,6 @@ public class Device_NetworkList extends Activity {
             createConnectThread = new CreateConnectThread(mBtAdapter, address);
             createConnectThread.run();
 
-//            BluetoothSocket tmp = null;
-//
-//            if (ActivityCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//
-//                ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 0);
-//
-//                return;
-//            }
-//            //UUID uuid = device.getUuids()[0].getUuid();
-//            UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
-//
-//            try {
-//                tmp = device.createRfcommSocketToServiceRecord(uuid);
-//
-//            } catch (IOException e) {
-//                Log.e(TAG, "Socket create failed", e);
-//            }
-//            socket = tmp;
-
-//            AsyncTask.execute(new Runnable() {
-//                @Override
-//                public void run() {
-//                    String message = "d";
-//                    byte[] toSend = message.getBytes();
-//                    BluetoothAdapter bA = BluetoothAdapter.getDefaultAdapter();
-//                    if (ActivityCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
-//                        ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 0);
-//                        return;
-//                    }
-//                    bA.cancelDiscovery();
-//                    try {
-//                        socket.connect();
-//                        showToast("connected");
-//                        if(socket.isConnected()){
-//                            showToast("still connected");
-//                        }
-//                        openActivity();
-//                        // Get the BluetoothSocket input and output streams
-//                        try {
-//                            input = socket.getInputStream();
-//                            output = socket.getOutputStream();
-//                            //showToast(toSend.toString());
-//                            output.write(toSend);
-//                        } catch (IOException e) {
-//                            showToast("error with stream");
-//                            //return;
-//                        }
-//
-//                        Log.e("status", "connected");
-//                    } catch (IOException connectException) {
-//                        try {
-//                            socket.close();
-//                            if (socket.isConnected()) {
-//                                showToast("already connected");
-//                            }
-//                            showToast("failed to connect");
-//                            Log.e("status", "failed to connect");
-//                        } catch (IOException closeException) {
-//                            Log.e(TAG, "could not close socket", closeException);
-//
-//                        }
-//                        return;
-//                    }
-//                }
-//            });
 
         }
     };
@@ -385,9 +285,6 @@ public class Device_NetworkList extends Activity {
             @Override
             public void run () {
                 super.run();
-                //showToast("in run");
-                String message = "d";
-                byte[] toSend = message.getBytes();
                 BluetoothAdapter bA = BluetoothAdapter.getDefaultAdapter();
                 if (ActivityCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 0);
@@ -401,10 +298,8 @@ public class Device_NetworkList extends Activity {
                     try {
                         input = socket.getInputStream();
                         output = socket.getOutputStream();
-                        //Intent A2= new Intent(Device_NetworkList.this,MainActivity2.class);
-                        //startActivity(A2);
-                        showToast(toSend.toString());
-                        output.write(toSend);
+                        Intent A2= new Intent(Device_NetworkList.this,MainActivity2.class);
+                        startActivity(A2);
                     } catch (IOException e) {
                         showToast("error with stream");
                         //return;

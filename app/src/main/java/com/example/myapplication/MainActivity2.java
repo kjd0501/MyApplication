@@ -4,19 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import android.bluetooth.BluetoothSocket;
-import android.content.Context;
 import android.content.Intent;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.text.format.Formatter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import com.example.myapplication.Device_NetworkList;
-
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
@@ -82,8 +76,6 @@ public class MainActivity2 extends AppCompatActivity {
         aclk2.setVisibility(View.GONE);
         clk3.setVisibility(View.GONE);
         aclk3.setVisibility(View.GONE);
-
-
 
         clk1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -316,8 +308,11 @@ public class MainActivity2 extends AppCompatActivity {
                     String message="1";
                     byte[] toSend = message.getBytes();
                     try {
+                        showToast("going1");
+
                         if(bs.isConnected()){
                             out.write(toSend);
+                            showToast("going");
                         }
                         else{
                             dout.writeUTF(message);

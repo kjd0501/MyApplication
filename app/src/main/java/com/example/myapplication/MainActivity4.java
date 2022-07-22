@@ -375,7 +375,6 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //add new call
                 //open MainActivity6
-
                 Intent act5 = new Intent(MainActivity4.this, MainActivity6.class);
                 startActivity(act5);
 

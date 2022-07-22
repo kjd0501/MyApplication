@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 
 import static android.content.ContentValues.TAG;
-
 import android.Manifest;
 import android.net.wifi.WifiManager;
 import android.bluetooth.BluetoothAdapter;
@@ -25,9 +24,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import java.util.Map;
 import java.util.HashMap;
-import android.view.View.OnTouchListener;
-import android.view.MotionEvent;
-import android.net.wifi.WifiConfiguration;
 import java.io.*;
 import java.net.*;
 import android.util.Log;
@@ -36,11 +32,9 @@ import android.util.Log;
 public class MainActivity extends AppCompatActivity {
     private Button bt;
     private Button wf;
-    private Button but;
     public static DataOutputStream dout;
     public static Socket s;
     BluetoothAdapter BA;
-    String ip="120.33.33.22";
     private static final int REQUEST_ENABLE_BT = 0;
     private static final int REQUEST_DISCOVER_BT = 1;
     public ConnectedThread2 connectedThread2;
@@ -62,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
             return;
         }
-
-
         wf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,25 +66,16 @@ public class MainActivity extends AppCompatActivity {
                     try{
                         //change ip address, this is just for testing
                         s = new Socket("10.248.128.125",6666);
-                        showToast("sent1");
-
                         dout=new DataOutputStream(s.getOutputStream());
-                        showToast("sent2");
-
-                        dout.writeUTF("Hello");
-                        dout.flush();
-                        dout.close();
-                        showToast("sent");
-                        s.close();
+                        Intent act2 = new Intent(MainActivity.this, MainActivity2.class);
+                        startActivity(act2);
+                        //dout.flush();
+                        //dout.close();
+                        //s.close();
                     }catch(Exception e){
                         Log.e(TAG, "failed", e);
                         showToast("not sent");
                     }
-
-
-                    //connectedThread2 = new ConnectedThread2(ipAddress);
-                    //connectedThread2.send(1,ip);
-
                 }
                 else
                     showToast("Wifi is not enabled");
@@ -106,8 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 if (!BA.isEnabled()) {
                     //showToast("Turning ON Bluetooth...");
                     Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-
-
                     if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
 
                         ActivityCompat.requestPermissions(MainActivity.this, new String[] { Manifest.permission.BLUETOOTH_CONNECT }, REQUEST_ENABLE_BT);
@@ -115,11 +96,9 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }
                     startActivityForResult(intent,REQUEST_ENABLE_BT);
-                    //showToast("Turning ON Bluetooth...");
 
                 }
                 else{
-                    //showToast("Bluetooth is already ON");
                     openActivity2();
                 }
             }
