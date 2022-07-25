@@ -34,15 +34,17 @@ import java.util.Set;
 
 
 public class Device_NetworkList extends Activity {
-    // Return Intent extra
+
+    // declare the variables to be used
     public static String EXTRA_DEVICE_ADDRESS = "device_address";
-    // Member fields
     private static final int REQUEST_ENABLE_BT = 2;
     private BluetoothAdapter mBtAdapter;
     public static BluetoothSocket socket;
     private ArrayAdapter mPairedDevicesArrayAdapter;
     private ArrayAdapter mNewDevicesArrayAdapter;
     private static UUID MY_UUID;
+
+    //both public and can be accessed from any activity
     public static InputStream input;
     public static OutputStream output;
 
@@ -53,6 +55,8 @@ public class Device_NetworkList extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_device_network_list);
         Button scanButton = (Button) findViewById(R.id.button_scan);
+
+        // when scan button is clicked, open doDiscovery()
         scanButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 doDiscovery();
@@ -95,14 +99,11 @@ public class Device_NetworkList extends Activity {
                 mPairedDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
             }
         }
-        /*
-             else {
-            String noDevices = getResources().getText(R.string.none_paired).toString();
-            mPairedDevicesArrayAdapter.add(noDevices);
-            }
-            */
+
     }
 
+
+    //stop discovering new devices
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -112,8 +113,6 @@ public class Device_NetworkList extends Activity {
                 // TODO: Consider calling
                 //    ActivityCompat#requestPermissions
                 ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 0);
-
-
             }
             mBtAdapter.cancelDiscovery();
         }
@@ -131,18 +130,17 @@ public class Device_NetworkList extends Activity {
         setProgressBarIndeterminateVisibility(true);
 
 
-        setTitle("scanning");
+
         // Turn on sub-title for new devices
         findViewById(R.id.title_new_devices).setVisibility(View.VISIBLE);
         // If we're already discovering, stop it
         if (ActivityCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 3);
-            showToast("scanning permission");
 
+            ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 3);
             return;
         }
+
+        //if device was already scanning for new devices, cancel discovery
         if (mBtAdapter.isDiscovering()) {
             mBtAdapter.cancelDiscovery();
 
@@ -172,6 +170,7 @@ public class Device_NetworkList extends Activity {
     }
 
     // The on-click listener for all devices in the ListViews
+    // when any device from the listview is selected to establish a connection
     private OnItemClickListener mDeviceClickListener = new OnItemClickListener() {
         public void onItemClick(AdapterView av, View v, int arg2, long arg3) {
             // Cancel discovery because it's costly and we're about to connect
@@ -182,15 +181,17 @@ public class Device_NetworkList extends Activity {
 
                 return;
             }
+
+            //make sure discovery has stopped
             mBtAdapter.cancelDiscovery();
 
             // Get the device MAC address, which is the last 17 chars in the View
-
             String info = ((TextView) v).getText().toString();
             String address = info.substring(info.length() - 17);
 
             BluetoothDevice device = mBtAdapter.getRemoteDevice(address);
-            showToast(address);
+
+            //open CreateConnectThread
             createConnectThread = new CreateConnectThread(mBtAdapter, address);
             createConnectThread.run();
 
@@ -198,8 +199,7 @@ public class Device_NetworkList extends Activity {
         }
     };
 
-    //The BroadcastReceiver that listens for discovered devices and
-    //changes the title when discovery is finished
+    //The BroadcastReceiver that listens for discovered devices
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
 
@@ -208,8 +208,8 @@ public class Device_NetworkList extends Activity {
         public void onReceive(Context context, Intent intent) {
 
             String action = intent.getAction();
-            // When discovery finds a device
 
+            // When discovery finds a device
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 // Get the BluetoothDevice object from the Intent
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
@@ -233,8 +233,10 @@ public class Device_NetworkList extends Activity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            if (BluetoothAdapter.ACTION_DISCOVERY_STARTED.equals(action)) {
 
+            //when discovery starts
+            if (BluetoothAdapter.ACTION_DISCOVERY_STARTED.equals(action)) {
+                showToast("scanning");
             }
         }
     };
@@ -243,18 +245,19 @@ public class Device_NetworkList extends Activity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
 
+            //when discovery finishes
+            if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
                 setProgressBarIndeterminateVisibility(false);
-                setTitle("select device");
+                showToast("scanning finished");
+
+                //setTitle("select device");
             }
         }
     };
 
-    public void openActivity() {
-        Intent act2 = new Intent(this, MainActivity2.class);
-        startActivity(act2);
-    }
+
+    // function for connecting to a bluetooth device
     public class CreateConnectThread extends Thread {
         public CreateConnectThread(BluetoothAdapter bA, String address) {
             BluetoothDevice device = bA.getRemoteDevice(address);
@@ -266,11 +269,11 @@ public class Device_NetworkList extends Activity {
 
                 return;
             }
-            //UUID uuid = device.getUuids()[0].getUuid();
+            // randomly selected uuid
             UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
             try {
-                tmp = device.createRfcommSocketToServiceRecord(uuid);
+                tmp = device.createRfcommSocketToServiceRecord(uuid);  // create a bluetooth client socket
 
             } catch (IOException e) {
                 Log.e(TAG, "Socket create failed", e);
@@ -279,8 +282,6 @@ public class Device_NetworkList extends Activity {
 
 
         }
-
-
 
             @Override
             public void run () {
@@ -292,19 +293,21 @@ public class Device_NetworkList extends Activity {
                 }
                 bA.cancelDiscovery();
                 try {
-                    socket.connect();
+                    socket.connect(); // connect to the selected device
                     showToast("connected");
-                    // Get the BluetoothSocket input and output streams
+
                     try {
+                        // Get the BluetoothSocket input and output streams
                         input = socket.getInputStream();
                         output = socket.getOutputStream();
+
+                        //go to home page
                         Intent A2= new Intent(Device_NetworkList.this,MainActivity2.class);
                         startActivity(A2);
                     } catch (IOException e) {
                         showToast("error with stream");
                         //return;
                     }
-
                     Log.e("status", "connected");
                 } catch (IOException connectException) {
                     try {
@@ -331,9 +334,7 @@ public class Device_NetworkList extends Activity {
         }
     }
 
-
-
-
+    // to print on the screen
     private void showToast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
