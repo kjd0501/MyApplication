@@ -42,10 +42,10 @@ public class MainActivity4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
-        bs=Device_NetworkList.socket;
-        out=Device_NetworkList.output;
-        sock=MainActivity.s;
-        dout=MainActivity.dout;
+//        bs=Device_NetworkList.socket;
+//        out=Device_NetworkList.output;
+//        sock=MainActivity.s;
+//        dout=MainActivity.dout;
         largeDown = (ImageButton) findViewById(R.id.largeDown);
         largeUp = (ImageButton) findViewById(R.id.largeup);
         fineDown = (ImageButton) findViewById(R.id.fineDown);
@@ -67,20 +67,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //large down call
                 String message="27";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -89,20 +77,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //large up call
                 String message="28";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -111,20 +87,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //fine down call
                 String message="29";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -133,20 +97,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //fine up call
                 String message="30";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -155,20 +107,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //extra fine down call
                 String message="31";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -177,20 +117,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //extra fine up call
                 String message="32";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -199,20 +127,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //forward 1 action
                 String message="21";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -221,20 +137,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //forward 2 action
                 String message="23";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -243,20 +147,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //forward 3 action
                 String message="25";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -265,20 +157,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //backward 1 call
                 String message="22";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -287,20 +167,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //backward 2 call
                 String message="24";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -309,20 +177,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //backward 3 call
                 String message="26";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -331,20 +187,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //circular call
                 String message="33";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
+                send(message);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -353,20 +197,7 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View view) {
                 //rectangular call
                 String message="34";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
 
@@ -380,5 +211,25 @@ public class MainActivity4 extends AppCompatActivity {
 
             }
         });
+    }
+    public void send(String message) {
+        bs=Device_NetworkList.socket;
+        sock=MainActivity.s;
+        dout=MainActivity.dout;
+        out=Device_NetworkList.output;
+        byte[] toSend = message.getBytes();
+        try {
+            if(bs.isConnected()){
+                out.write(toSend);
+            }
+            else{
+                dout.writeUTF(message);
+                dout.flush();
+                //dout.close();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

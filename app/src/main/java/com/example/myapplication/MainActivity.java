@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // make sure wifi is turned on
                 if (wifi.isWifiEnabled()){
-                    String ipAddress = Formatter.formatIpAddress(wifi.getConnectionInfo().getIpAddress());
-                    showToast(ipAddress);
+                    //String ipAddress = Formatter.formatIpAddress(wifi.getConnectionInfo().getIpAddress());
+                    //showToast(ipAddress);
                     try{
                         //create a client socket to connect to a server socket
                         //change ip address, this is just for testing

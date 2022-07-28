@@ -127,13 +127,8 @@ public class Device_NetworkList extends Activity {
      */
     private void doDiscovery() {
         // Indicate scanning in the title
-        setProgressBarIndeterminateVisibility(true);
 
 
-
-        // Turn on sub-title for new devices
-        findViewById(R.id.title_new_devices).setVisibility(View.VISIBLE);
-        // If we're already discovering, stop it
         if (ActivityCompat.checkSelfPermission(Device_NetworkList.this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
 
             ActivityCompat.requestPermissions(Device_NetworkList.this, new String[]{Manifest.permission.BLUETOOTH_SCAN}, 3);
@@ -312,9 +307,9 @@ public class Device_NetworkList extends Activity {
                 } catch (IOException connectException) {
                     try {
                         socket.close();
-                        if (socket.isConnected()) {
-                            showToast("already connected");
-                        }
+//                        if (socket.isConnected()) {
+//                            showToast("already connected");
+//                        }
                         showToast("failed to connect");
                         Log.e("status", "failed to connect");
                     } catch (IOException closeException) {

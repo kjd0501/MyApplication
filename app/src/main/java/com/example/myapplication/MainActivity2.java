@@ -40,6 +40,7 @@ public class MainActivity2 extends AppCompatActivity {
     private long lastTouchTime = 0;
     private long currentTouchTime = 0;
 
+
     private void showToast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
@@ -47,10 +48,10 @@ public class MainActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        bs=Device_NetworkList.socket;
-        sock=MainActivity.s;
-        dout=MainActivity.dout;
-        out=Device_NetworkList.output;
+//        bs=Device_NetworkList.socket;
+//        sock=MainActivity.s;
+//        dout=MainActivity.dout;
+//        out=Device_NetworkList.output;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         drillMode = (Button) findViewById(R.id.drillMode);
@@ -82,20 +83,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //clockwise rotation 1 call
                 String message="7";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                    out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
         aclk1.setOnClickListener(new View.OnClickListener() {
@@ -103,20 +91,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //counter clockwise rotation 1 call
                 String message="8";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
         clk2.setOnClickListener(new View.OnClickListener() {
@@ -124,20 +99,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //clockwise rotation 2 call
                 String message="9";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
         aclk2.setOnClickListener(new View.OnClickListener() {
@@ -145,20 +107,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //counter clockwise rotation 2 call
                 String message="10";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
         clk3.setOnClickListener(new View.OnClickListener() {
@@ -166,20 +115,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //clockwise rotation 3 call
                 String message="11";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
         aclk3.setOnClickListener(new View.OnClickListener() {
@@ -187,20 +123,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //counter clockwise rotation 3 call
                 String message="12";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
         drillMode.setOnClickListener(new View.OnClickListener(){
@@ -228,20 +151,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //home orientation call
                 String message="13";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
 
@@ -250,20 +160,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //raise end effector call
                 String message="14";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
 
@@ -306,23 +203,7 @@ public class MainActivity2 extends AppCompatActivity {
                 } else {
                     //forward 1 call
                     String message="1";
-                    byte[] toSend = message.getBytes();
-                    try {
-                        showToast("going1");
-
-                        if(bs.isConnected()){
-                            out.write(toSend);
-                            showToast("going");
-                        }
-                        else{
-                            dout.writeUTF(message);
-                            dout.flush();
-                            //dout.close();
-                        }
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    send(message);
                 }
             }
         });
@@ -365,20 +246,7 @@ public class MainActivity2 extends AppCompatActivity {
                 } else {
                     //forward 2 call
                     String message="3";
-                    byte[] toSend = message.getBytes();
-                    try {
-                        if(bs.isConnected()){
-                            out.write(toSend);
-                        }
-                        else{
-                            dout.writeUTF(message);
-                            dout.flush();
-                            //dout.close();
-                        }
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    send(message);
                 }
             }
         });
@@ -421,20 +289,7 @@ public class MainActivity2 extends AppCompatActivity {
                 } else {
                     //forward 3 call
                     String message="5";
-                    byte[] toSend = message.getBytes();
-                    try {
-                        if(bs.isConnected()){
-                            out.write(toSend);
-                        }
-                        else{
-                            dout.writeUTF(message);
-                            dout.flush();
-                            //dout.close();
-                        }
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    send(message);
                 }
             }
         });
@@ -444,20 +299,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //backward 1 call
                 String message="2";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
 
@@ -466,20 +308,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //backward 2 call
                 String message="4";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
 
@@ -488,23 +317,33 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 //backward 3 call
                 String message="6";
-                byte[] toSend = message.getBytes();
-                try {
-                    if(bs.isConnected()){
-                        out.write(toSend);
-                    }
-                    else{
-                        dout.writeUTF(message);
-                        dout.flush();
-                        //dout.close();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                send(message);
             }
         });
 
     }
+
+    public void send(String message) {
+        bs=Device_NetworkList.socket;
+        sock=MainActivity.s;
+        dout=MainActivity.dout;
+        out=Device_NetworkList.output;
+        byte[] toSend = message.getBytes();
+        try {
+            if(bs.isConnected()){
+                out.write(toSend);
+            }
+            else{
+                dout.writeUTF(message);
+                dout.flush();
+                //dout.close();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
 
