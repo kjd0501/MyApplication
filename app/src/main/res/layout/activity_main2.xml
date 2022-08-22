@@ -22,9 +22,9 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_weight="1"
-        android:background="@color/purple_500"
+        android:background="#8BC34A"
         app:popupTheme="@style/Theme.MyApplication.PopupOverlay"
-        app:title="                    Connected to your Robot"
+        app:title="                Connected to your Robot"
         app:titleMargin="4dp"
         app:titleTextColor="#050505" />
 
@@ -261,6 +261,12 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="524dp"
         android:text="Raise End Effector" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>

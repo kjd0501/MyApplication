@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:background="#FFFEFE"
-    android:backgroundTint="#7E9A97"
+    android:backgroundTint="#FFFFFF"
 
     tools:context="com.example.myapplication.MainActivity">
 
@@ -14,17 +14,17 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:layout_weight="1" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="97dp"
         android:layout_weight="1"
-        android:background="@color/purple_500"
+        android:background="#8BC34A"
         app:popupTheme="@style/Theme.MyApplication.PopupOverlay"
-        app:title="                  Connected to your Robot"
+        app:title="                Connected to your Robot"
         app:titleMargin="4dp"
         app:titleTextColor="#050505" />
 
@@ -33,10 +33,10 @@
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
         android:layout_height="97dp"
+        android:layout_alignBottom="@+id/toolbar"
+        android:layout_marginBottom="-98dp"
         android:layout_weight="1"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="536dp"
-        android:background="@color/teal_700"
+        android:background="#00BCD4"
         app:popupTheme="@style/Theme.MyApplication.PopupOverlay"
         app:title="                 Suction cups manipulation"
         app:titleMargin="4dp"
@@ -46,83 +46,90 @@
         android:id="@+id/suctionCup3"
         android:layout_width="111dp"
         android:layout_height="105dp"
-        android:layout_weight="1"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="239dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="235dp"
+        android:layout_weight="1"
         android:background="@drawable/circle_button"
-        android:backgroundTint="#FF8A80" />
+        android:backgroundTint="#FF9800" />
 
     <ImageButton
         android:id="@+id/suctionCup1"
         android:layout_width="111dp"
         android:layout_height="105dp"
-        android:layout_weight="1"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="149dp"
         android:layout_marginEnd="148dp"
         android:layout_marginBottom="422dp"
+        android:layout_weight="1"
         android:background="@drawable/circle_button"
-        android:backgroundTint="#FF8A80" />
+        android:backgroundTint="#FF9800" />
 
     <ImageButton
         android:id="@+id/suctionCup2"
         android:layout_width="111dp"
         android:layout_height="105dp"
-        android:layout_weight="1"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="62dp"
         android:layout_marginEnd="237dp"
         android:layout_marginBottom="235dp"
+        android:layout_weight="1"
         android:background="@drawable/circle_button"
-        android:backgroundTint="#FF8A80" />
+        android:backgroundTint="#FF9800" />
 
     <ImageButton
         android:id="@+id/innerSuctionCups"
         android:layout_width="111dp"
         android:layout_height="105dp"
-        android:layout_weight="1"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="149dp"
         android:layout_marginEnd="148dp"
         android:layout_marginBottom="312dp"
+        android:layout_weight="1"
         android:background="@drawable/circle_button"
-        android:backgroundTint="#EA0909" />
+        android:backgroundTint="#673AB7" />
 
     <Button
         android:id="@+id/perimeterCups"
         android:layout_width="192dp"
         android:layout_height="94dp"
-        android:layout_weight="1"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="116dp"
         android:layout_marginEnd="105dp"
         android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:background="#FF3F51B5"
         android:text="Perimeter cups on/middle cups off" />
 
     <Button
         android:id="@+id/allSuctionCups"
         android:layout_width="192dp"
         android:layout_height="94dp"
-        android:layout_weight="1"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="114dp"
         android:layout_marginEnd="106dp"
         android:layout_marginBottom="129dp"
+        android:layout_weight="1"
         android:text="All suction cups on/off" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>
