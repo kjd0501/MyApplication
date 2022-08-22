@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="#FFFEFE"
-        android:backgroundTint="#1B2140"
+        android:backgroundTint="#FFFDF7"
 
         tools:context="com.example.myapplication.MainActivity"
         tools:layout_editor_absoluteX="16dp"
@@ -61,7 +61,7 @@
             android:layout_marginEnd="39dp"
             android:layout_marginBottom="46dp"
             android:layout_weight="1"
-            android:background="#FFFFFF" />
+            android:background="#673AB7" />
 
 
     </RelativeLayout>
