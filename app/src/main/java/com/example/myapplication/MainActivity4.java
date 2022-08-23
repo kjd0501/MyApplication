@@ -226,6 +226,8 @@ public class MainActivity4 extends AppCompatActivity {
                 dout.writeUTF(message);
                 dout.flush();
                 //dout.close();
+                Intent A1 = new Intent(this, MainActivity.class);
+                startActivity(A1);
             }
 
         } catch (IOException e) {
