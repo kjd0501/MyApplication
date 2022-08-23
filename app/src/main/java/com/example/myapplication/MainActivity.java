@@ -78,8 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         dout=new DataOutputStream(s.getOutputStream());
 
                         // open home page
-                        Intent act2 = new Intent(MainActivity.this, MainActivity2.class);
-                        startActivity(act2);
+                        openActivity2();
                         //dout.flush();
                         //dout.close();
                         //s.close();
