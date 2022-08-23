@@ -10,13 +10,6 @@
 
     tools:context="com.example.myapplication.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_weight="1" />
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -29,14 +22,78 @@
         app:titleTextColor="#050505" />
 
 
+    <Button
+        android:id="@+id/drillMode"
+        android:layout_width="137dp"
+        android:layout_height="91dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="266dp"
+        android:layout_marginBottom="7dp"
+        android:layout_weight="1"
+        android:backgroundTint="#FF9800"
+        android:text="Drill mode" />
+
+    <Button
+        android:id="@+id/suctionCups"
+        android:layout_width="137dp"
+        android:layout_height="91dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="266dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        android:backgroundTint="#FF9800"
+        android:text="Suction cups" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/fw2"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="242dp"
+        android:layout_marginBottom="250dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#3F51B5"
+        android:text="FW2"
+        android:textColor="#FFFFFF" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="47dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="309dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#3F51B5" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/clk1"
         android:layout_width="74dp"
         android:layout_height="72dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="440dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="416dp"
         android:layout_weight="1"
         android:background="#FFEB3B"
         android:backgroundTint="#00B8D4"
@@ -52,8 +109,8 @@
         android:layout_height="72dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="258dp"
-        android:layout_marginBottom="438dp"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="415dp"
         android:layout_weight="1"
         android:backgroundTint="#00B8D4"
         android:clickable="true"
@@ -70,8 +127,8 @@
         android:layout_height="72dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="187dp"
-        android:layout_marginBottom="275dp"
+        android:layout_marginEnd="186dp"
+        android:layout_marginBottom="252dp"
         android:layout_weight="1"
         android:backgroundTint="#00B8D4"
         android:clickable="true"
@@ -79,15 +136,14 @@
         app:backgroundTint="#FFEB3B"
         app:srcCompat="@android:drawable/ic_menu_rotate" />
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/aclk2"
         android:layout_width="74dp"
         android:layout_height="72dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="352dp"
-        android:layout_marginBottom="276dp"
+        android:layout_marginEnd="351dp"
+        android:layout_marginBottom="253dp"
         android:layout_weight="1"
         android:backgroundTint="#00B8D4"
         android:clickable="true"
@@ -104,8 +160,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="277dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="253dp"
         android:layout_weight="1"
         android:backgroundTint="#00B8D4"
         android:clickable="true"
@@ -119,8 +175,8 @@
         android:layout_height="72dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="167dp"
-        android:layout_marginBottom="273dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginBottom="250dp"
         android:layout_weight="1"
         android:backgroundTint="#00B8D4"
         android:clickable="true"
@@ -138,9 +194,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="154dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="438dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="415dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
         android:backgroundTint="#3F51B5"
@@ -154,45 +210,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="242dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="274dp"
+        android:layout_marginStart="243dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="251dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
         android:backgroundTint="#3F51B5"
         android:text="FW3"
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/fw2"
-        android:layout_width="wrap_content"
-        android:layout_height="58dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="59dp"
-        android:layout_marginEnd="243dp"
-        android:layout_marginBottom="274dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#3F51B5"
-        android:text="FW2"
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/bw2"
-        android:layout_width="59dp"
-        android:layout_height="58dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="243dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="374dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#3F51B5"
-        android:text="BW2"
         android:textColor="#FFFFFF" />
 
     <Button
@@ -202,9 +226,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="244dp"
-        android:layout_marginBottom="376dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginEnd="243dp"
+        android:layout_marginBottom="352dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
         android:backgroundTint="#3F51B5"
@@ -218,9 +242,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="154dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="202dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="179dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
         android:backgroundTint="#3F51B5"
@@ -228,44 +252,20 @@
         android:textColor="#FFFFFF" />
 
     <Button
-        android:id="@+id/drillMode"
-        android:layout_width="137dp"
-        android:layout_height="91dp"
+        android:id="@+id/bw2"
+        android:layout_width="59dp"
+        android:layout_height="58dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="266dp"
-        android:layout_marginBottom="7dp"
-        android:layout_weight="1"
-        android:text="Drill mode" />
-
-    <Button
-        android:id="@+id/suctionCups"
-        android:layout_width="137dp"
-        android:layout_height="91dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="266dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="4dp"
-        android:layout_weight="1"
-        android:text="Suction cups" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="47dp"
-        android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="157dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="332dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="350dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
-        android:backgroundTint="#3F51B5" />
+        android:backgroundTint="#3F51B5"
+        android:text="BW2"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/Home"
@@ -276,6 +276,7 @@
         android:layout_marginEnd="233dp"
         android:layout_marginBottom="523dp"
         android:layout_weight="1"
+        android:backgroundTint="#FFC107"
         android:text="Go to home orientation" />
 
     <Button
@@ -287,13 +288,8 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="524dp"
         android:layout_weight="1"
+        android:backgroundTint="#FFC107"
         android:text="Raise End Effector" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>
