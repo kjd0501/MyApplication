@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:background="#FFFEFE"
-    android:backgroundTint="#FFFFFF"
 
+    android:backgroundTint="#FFFFFF"
     tools:context="com.example.myapplication.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -16,6 +17,8 @@
         android:layout_height="120dp"
         android:layout_weight="1"
         android:background="#8BC34A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/Theme.MyApplication.PopupOverlay"
         app:title="                Connected to your Robot"
         app:titleMargin="4dp"
@@ -26,74 +29,176 @@
         android:id="@+id/drillMode"
         android:layout_width="137dp"
         android:layout_height="91dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="266dp"
         android:layout_marginBottom="7dp"
         android:layout_weight="1"
         android:backgroundTint="#FF9800"
-        android:text="Drill mode" />
+        android:text="Drill mode"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/suctionCups"
         android:layout_width="137dp"
         android:layout_height="91dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="266dp"
         android:layout_marginEnd="7dp"
         android:layout_marginBottom="4dp"
         android:layout_weight="1"
         android:backgroundTint="#FF9800"
-        android:text="Suction cups" />
+        android:text="Suction cups"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/fw2"
-        android:layout_width="wrap_content"
-        android:layout_height="58dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        android:layout_width="59dp"
+        android:layout_height="57dp"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="242dp"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="248dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
         android:backgroundTint="#3F51B5"
         android:text="FW2"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="47dp"
-        android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        android:layout_width="70dp"
+        android:layout_height="66dp"
         android:layout_marginStart="158dp"
         android:layout_marginEnd="157dp"
-        android:layout_marginBottom="309dp"
+        android:layout_marginBottom="320dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
-        android:backgroundTint="#3F51B5" />
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/clk2"
+        android:layout_width="57dp"
+        android:layout_height="67dp"
+        android:layout_marginEnd="208dp"
+        android:layout_marginBottom="248dp"
+        android:layout_weight="1"
+        android:backgroundTint="#00B8D4"
+        android:clickable="true"
+        android:tint="#000000"
+        app:backgroundTint="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/aclk2"
+        android:layout_width="57dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="336dp"
+        android:layout_marginBottom="248dp"
+        android:layout_weight="1"
+        android:backgroundTint="#00B8D4"
+        android:clickable="true"
+        android:rotation="0"
+        android:rotationX="0"
+        android:rotationY="180"
+        android:tint="#000000"
+        app:backgroundTint="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/clk3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="248dp"
+        android:layout_weight="1"
+        android:backgroundTint="#00B8D4"
+        android:clickable="true"
+        android:tint="#000000"
+        app:backgroundTint="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/aclk3"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="248dp"
+        android:layout_weight="1"
+        android:backgroundTint="#00B8D4"
+        android:clickable="true"
+        android:rotation="0"
+        android:rotationX="0"
+        android:rotationY="180"
+        android:tint="#000000"
+        app:backgroundTint="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+    <Button
+        android:id="@+id/fw1"
+        android:layout_width="59dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="408dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#3F51B5"
+        android:text="FW1"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/aclk1"
+        android:layout_width="57dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="240dp"
+        android:layout_marginBottom="408dp"
+        android:layout_weight="1"
+        android:backgroundTint="#00B8D4"
+        android:clickable="true"
+        android:rotation="0"
+        android:rotationX="0"
+        android:rotationY="180"
+        android:tint="#000000"
+        app:backgroundTint="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/clk1"
-        android:layout_width="74dp"
-        android:layout_height="72dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="91dp"
-        android:layout_marginBottom="416dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="408dp"
         android:layout_weight="1"
         android:background="#FFEB3B"
         android:backgroundTint="#00B8D4"
@@ -101,147 +206,47 @@
         android:foregroundTint="#000000"
         android:tint="#000000"
         app:backgroundTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_menu_rotate" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/aclk1"
-        android:layout_width="74dp"
-        android:layout_height="72dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="256dp"
-        android:layout_marginBottom="415dp"
-        android:layout_weight="1"
-        android:backgroundTint="#00B8D4"
-        android:clickable="true"
-        android:rotation="0"
-        android:rotationX="0"
-        android:rotationY="180"
-        android:tint="#000000"
-        app:backgroundTint="#FFEB3B"
-        app:srcCompat="@android:drawable/ic_menu_rotate" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/clk2"
-        android:layout_width="74dp"
-        android:layout_height="72dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="186dp"
-        android:layout_marginBottom="252dp"
-        android:layout_weight="1"
-        android:backgroundTint="#00B8D4"
-        android:clickable="true"
-        android:tint="#000000"
-        app:backgroundTint="#FFEB3B"
-        app:srcCompat="@android:drawable/ic_menu_rotate" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/aclk2"
-        android:layout_width="74dp"
-        android:layout_height="72dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="351dp"
-        android:layout_marginBottom="253dp"
-        android:layout_weight="1"
-        android:backgroundTint="#00B8D4"
-        android:clickable="true"
-        android:rotation="0"
-        android:rotationX="0"
-        android:rotationY="180"
-        android:tint="#000000"
-        app:backgroundTint="#FFEB3B"
-        app:srcCompat="@android:drawable/ic_menu_rotate" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/clk3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="253dp"
-        android:layout_weight="1"
-        android:backgroundTint="#00B8D4"
-        android:clickable="true"
-        android:tint="#000000"
-        app:backgroundTint="#FFEB3B"
-        app:srcCompat="@android:drawable/ic_menu_rotate" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/aclk3"
-        android:layout_width="74dp"
-        android:layout_height="72dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="165dp"
-        android:layout_marginBottom="250dp"
-        android:layout_weight="1"
-        android:backgroundTint="#00B8D4"
-        android:clickable="true"
-        android:rotation="0"
-        android:rotationX="0"
-        android:rotationY="180"
-        android:tint="#000000"
-        app:backgroundTint="#FFEB3B"
-        app:srcCompat="@android:drawable/ic_menu_rotate" />
-
-    <Button
-        android:id="@+id/fw1"
-        android:layout_width="59dp"
-        android:layout_height="56dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="155dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="415dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#3F51B5"
-        android:text="FW1"
-        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/fw3"
         android:layout_width="61dp"
         android:layout_height="59dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="243dp"
         android:layout_marginEnd="59dp"
-        android:layout_marginBottom="251dp"
+        android:layout_marginBottom="248dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
         android:backgroundTint="#3F51B5"
         android:text="FW3"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bw3"
-        android:layout_width="59dp"
-        android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="61dp"
         android:layout_marginEnd="243dp"
-        android:layout_marginBottom="352dp"
+        android:layout_marginBottom="328dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
         android:backgroundTint="#3F51B5"
         android:text="BW3"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bw1"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        android:layout_width="61dp"
+        android:layout_height="57dp"
         android:layout_marginStart="155dp"
         android:layout_marginEnd="149dp"
         android:layout_marginBottom="179dp"
@@ -249,47 +254,51 @@
         android:background="@drawable/circle_button"
         android:backgroundTint="#3F51B5"
         android:text="BW1"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bw2"
         android:layout_width="59dp"
         android:layout_height="58dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="244dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginBottom="328dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
         android:backgroundTint="#3F51B5"
         android:text="BW2"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/Home"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginEnd="233dp"
         android:layout_marginBottom="523dp"
         android:layout_weight="1"
         android:backgroundTint="#FFC107"
-        android:text="Go to home orientation" />
+        android:text="Go to home orientation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/raiseEE"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="524dp"
         android:layout_weight="1"
         android:backgroundTint="#FFC107"
-        android:text="Raise End Effector" />
+        android:text="Raise End Effector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

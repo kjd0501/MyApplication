@@ -54,24 +54,6 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <ImageButton
-        android:id="@+id/innerSuctionCups"
-        android:layout_width="111dp"
-        android:layout_height="105dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="149dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="328dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#F44336"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
         android:id="@+id/suctionCup1"
         android:layout_width="111dp"
         android:layout_height="105dp"
@@ -80,50 +62,13 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="149dp"
         android:layout_marginEnd="148dp"
-        android:layout_marginBottom="436dp"
+        android:layout_marginBottom="420dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
         android:backgroundTint="#FF9800"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/allSuctionCups"
-        android:layout_width="192dp"
-        android:layout_height="94dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="114dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginBottom="144dp"
-        android:layout_weight="1"
-        android:backgroundTint="#3F51B5"
-        android:text="All suction cups on/off"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/suctionCup3"
-        android:layout_width="111dp"
-        android:layout_height="105dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="239dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="252dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#FF9800"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
@@ -135,13 +80,68 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="62dp"
         android:layout_marginEnd="237dp"
-        android:layout_marginBottom="252dp"
+        android:layout_marginBottom="236dp"
         android:layout_weight="1"
         android:background="@drawable/circle_button"
         android:backgroundTint="#FF9800"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/innerSuctionCups"
+        android:layout_width="111dp"
+        android:layout_height="105dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="149dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="312dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/suctionCup3"
+        android:layout_width="111dp"
+        android:layout_height="105dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="239dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="236dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#FF9800"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/allSuctionCups"
+        android:layout_width="192dp"
+        android:layout_height="94dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="114dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="132dp"
+        android:layout_weight="1"
+        android:backgroundTint="#3F51B5"
+        android:text="All suction cups on/off"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
