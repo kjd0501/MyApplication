@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--This is used to define the main robot manipulation page of the app.-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,6 +12,7 @@
     android:backgroundTint="#FFFFFF"
     tools:context="com.example.myapplication.MainActivity">
 
+    <!--This is used to define the button for anticlockwise rotational movement in the direction of axis 1.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/aclk1"
         android:layout_width="wrap_content"
@@ -29,6 +31,7 @@
         app:layout_constraintVertical_bias="0.407"
         app:srcCompat="@android:drawable/ic_menu_rotate" />
 
+    <!--This is used to define the button for clockwise rotational movement in the direction of axis 1.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/clk1"
         android:layout_width="wrap_content"
@@ -46,6 +49,7 @@
         app:layout_constraintVertical_bias="0.407"
         app:srcCompat="@android:drawable/ic_menu_rotate" />
 
+    <!--This is used to define the button for anticlockwise rotational movement in the direction of axis 2.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/aclk2"
         android:layout_width="wrap_content"
@@ -64,6 +68,7 @@
         app:layout_constraintVertical_bias="0.64"
         app:srcCompat="@android:drawable/ic_menu_rotate" />
 
+    <!--This is used to define the button for clockwise rotational movement in the direction of axis 2.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/clk2"
         android:layout_width="wrap_content"
@@ -81,6 +86,7 @@
         app:layout_constraintVertical_bias="0.64"
         app:srcCompat="@android:drawable/ic_menu_rotate" />
 
+    <!--This is used to define the button for anticlockwise rotational movement in the direction of axis 3.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/aclk3"
         android:layout_width="wrap_content"
@@ -99,6 +105,7 @@
         app:layout_constraintVertical_bias="0.64"
         app:srcCompat="@android:drawable/ic_menu_rotate" />
 
+    <!--This is used to define the button for clockwise rotational movement in the direction of axis 3.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/clk3"
         android:layout_width="wrap_content"
@@ -116,6 +123,8 @@
         app:layout_constraintVertical_bias="0.641"
         app:srcCompat="@android:drawable/ic_menu_rotate" />
 
+    <!--This is used to define the widget at the top of the page informs the user that the app is
+    connected to the robot.-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -129,7 +138,7 @@
         app:titleMargin="4dp"
         app:titleTextColor="#050505" />
 
-
+    <!--This is used to define the button for transition to the drill mode manipulation page.-->
     <Button
         android:id="@+id/drillMode"
         android:layout_width="137dp"
@@ -144,6 +153,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button for the transition to the suction cup manipulation page.-->
     <Button
         android:id="@+id/suctionCups"
         android:layout_width="137dp"
@@ -158,14 +168,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!--This is used to define the button for translational movement in the forward direction
+    of axis 1.-->
+    <Button
+        android:id="@+id/fw1"
+        android:layout_width="59dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="400dp"
         android:layout_weight="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#3F51B5"
+        android:text="FW1"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button for translational movement in the forward direction
+    of axis 2.-->
     <Button
         android:id="@+id/fw2"
         android:layout_width="59dp"
@@ -184,23 +207,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.64" />
 
-    <Button
-        android:id="@+id/fw1"
-        android:layout_width="59dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="155dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="400dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#3F51B5"
-        android:text="FW1"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    <!--This is used to define the button for translational movement in the forward direction
+    of axis 3.-->
     <Button
         android:id="@+id/fw3"
         android:layout_width="61dp"
@@ -218,23 +226,8 @@
         app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/bw3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginEnd="243dp"
-        android:layout_marginBottom="328dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#3F51B5"
-        android:text="BW3"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    <!--This is used to define the button for translational movement in the backward direction
+    of axis 1.-->
     <Button
         android:id="@+id/bw1"
         android:layout_width="61dp"
@@ -251,6 +244,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button for translational movement in the backward direction
+    of axis 2.-->
     <Button
         android:id="@+id/bw2"
         android:layout_width="59dp"
@@ -268,6 +263,26 @@
         app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button for translational movement in the backward direction
+    of axis 3.-->
+    <Button
+        android:id="@+id/bw3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginEnd="243dp"
+        android:layout_marginBottom="328dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#3F51B5"
+        android:text="BW3"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--This is used to define the button to send the robot to its home orientation.-->
     <Button
         android:id="@+id/Home"
         android:layout_width="138dp"
@@ -280,6 +295,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!--This is used to define the button to raise the end effector tool of the robot.-->
     <Button
         android:id="@+id/raiseEE"
         android:layout_width="150dp"
@@ -292,6 +308,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!--This is used to define the central icon on the page. This icon is to be replaced by
+    an image or model of the robot.-->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
