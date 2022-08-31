@@ -11,6 +11,8 @@
     android:backgroundTint="#FFFFFF"
     tools:context="com.example.myapplication.MainActivity">
 
+    <!--This is used to define the widget at the top of the page which prompts the user to connect to the
+    robot.-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -25,6 +27,7 @@
         app:titleMargin="4dp"
         app:titleTextColor="#000000" />
 
+    <!--This is used to define the button which allows the app to connect to the robot using bluetooth.-->
     <Button
         android:id="@+id/bluetooth"
         android:layout_width="192dp"
@@ -40,6 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button which allows the app to connect to the robot using Wi-Fi.-->
     <Button
         android:id="@+id/wifi"
         android:layout_width="192dp"

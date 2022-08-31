@@ -2,53 +2,60 @@ package com.example.myapplication;
 
 
 import static android.content.ContentValues.TAG;
+
 import android.Manifest;
-import android.net.wifi.WifiManager;
 import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import android.content.pm.PackageManager;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.text.format.Formatter;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.content.Context;
 import android.widget.Toast;
-import com.android.volley.toolbox.Volley;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.RequestQueue;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import java.util.Map;
-import java.util.HashMap;
-import java.io.*;
-import java.net.*;
-import android.util.Log;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import java.io.DataOutputStream;
+import java.net.Socket;
+
+/**
+ * This class is used to declare the methods for the page activity_main.xml.
+ * In this class, connection to the robot using wifi and bluetooth is allowed.
+ */
 public class MainActivity extends AppCompatActivity {
-    //declare the variables to be used
+    //declare the variables to be used for the buttons
     private Button bt;
     private Button wf;
 
-    // s & dout are public and accessible from any activity
+    // s & dout are public and accessible from any activity so that the bluetooth
+    // connection is retained across the whole app
     public static DataOutputStream dout;
     public static Socket s;
 
-
+    // declare the variables for the bluetooth adapter for connection with the robot
     BluetoothAdapter BA;
     private static final int REQUEST_ENABLE_BT = 0;
     private static final int REQUEST_DISCOVER_BT = 1;
+
+    /**
+     * This method is used to initialise the buttons available on the page.
+     * It is also used to define the actions triggered for the buttons when they
+     * are tapped.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //set the page to activity_main
         setContentView(R.layout.activity_main);
+
+        //initialise the buttons
         bt = (Button) findViewById(R.id.bluetooth);  // bluetooth button
         wf = (Button) findViewById(R.id.wifi);  // wifi button
-        BA = BluetoothAdapter.getDefaultAdapter();
+        BA = BluetoothAdapter.getDefaultAdapter(); //bluetooth adapter
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                 .permitAll().build();
@@ -121,7 +128,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    /**
+     * This method is used to check if bluetooth is enabled on a device.
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         switch (requestCode){
             case REQUEST_ENABLE_BT:
@@ -137,13 +146,18 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode,data);
     }
 
-    // to print on the screen
+    /**
+     * This method is used to print the message msg on the screen.
+     * @param msg is the message to be printed
+     */
     private void showToast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
 
-    //go to Device_NetworkList activity
+    /**
+     * This method is used to go to Device_NetworkList Activity.
+     */
     public void openActivity2() {
         Intent A2 = new Intent(this, Device_NetworkList.class);
         startActivity(A2);
