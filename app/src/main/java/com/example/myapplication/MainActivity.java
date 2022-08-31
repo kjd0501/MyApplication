@@ -28,8 +28,8 @@ import java.net.Socket;
  */
 public class MainActivity extends AppCompatActivity {
     //declare the variables to be used for the buttons
-    private Button bt;
-    private Button wf;
+    private Button bt; //bluetooth button
+    private Button wf; //wifi button
 
     // s & dout are public and accessible from any activity so that the bluetooth
     // connection is retained across the whole app
