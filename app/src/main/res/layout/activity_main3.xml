@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--This is used to define the suction cup manipulation page of the app.-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,19 +12,8 @@
     android:backgroundTint="#FFFDF7"
     tools:context="com.example.myapplication.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    <!--This is used to define the widget at the top of the page informs the user that the app is
+    connected to the robot.-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -37,7 +27,8 @@
         app:titleMargin="4dp"
         app:titleTextColor="#050505" />
 
-
+    <!--This is used to define the widget at the top of the page informs the user that this page
+    relates to the manipulation of the suction cups.-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
@@ -53,6 +44,7 @@
         app:titleTextColor="#050505"
         tools:layout_editor_absoluteX="0dp" />
 
+    <!--This is used to define the button to toggle suction cup 1.-->
     <ImageButton
         android:id="@+id/suctionCup1"
         android:layout_width="111dp"
@@ -71,6 +63,7 @@
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button to toggle suction cup 2.-->
     <ImageButton
         android:id="@+id/suctionCup2"
         android:layout_width="111dp"
@@ -89,24 +82,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/innerSuctionCups"
-        android:layout_width="111dp"
-        android:layout_height="105dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="149dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="312dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#F44336"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    <!--This is used to define the button to toggle suction cup 3.-->
     <ImageButton
         android:id="@+id/suctionCup3"
         android:layout_width="111dp"
@@ -125,6 +101,26 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button to toggle the inner suction cups.-->
+    <ImageButton
+        android:id="@+id/innerSuctionCups"
+        android:layout_width="111dp"
+        android:layout_height="105dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="149dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="312dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--This is used to define the button to toggle all suction cups.-->
     <Button
         android:id="@+id/allSuctionCups"
         android:layout_width="197dp"
@@ -143,6 +139,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.805" />
 
+    <!--This is used to define the button to toggle the perimeter suction cups.-->
     <Button
         android:id="@+id/perimeterCups"
         android:layout_width="192dp"
