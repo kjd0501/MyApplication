@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--This is used to define the drill mode manipulation page of the app.-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,6 +12,7 @@
     android:backgroundTint="#FFFDF7"
     tools:context="com.example.myapplication.MainActivity">
 
+    <!--This is used to define the button to raise the end effector tool: extra fine.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/extraFineUp"
         android:layout_width="wrap_content"
@@ -24,6 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/arrow_up_float" />
 
+    <!--This is used to define the button to raise the end effector tool: fine.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fineUp"
         android:layout_width="wrap_content"
@@ -37,6 +40,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/arrow_up_float" />
 
+
+    <!--This is used to define the button to raise the end effector tool: large.-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/largeup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="184dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/arrow_up_float" />
+
+    <!--This is used to define the button to lower the end effector tool: extra fine.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/extraFineDown"
         android:layout_width="wrap_content"
@@ -50,6 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/arrow_down_float" />
 
+    <!--This is used to define the button to lower the end effector tool: large.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/largeDown"
         android:layout_width="wrap_content"
@@ -63,6 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/arrow_down_float" />
 
+    <!--This is used to define the button to lower the end effector tool: fine.-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fineDown"
         android:layout_width="wrap_content"
@@ -76,18 +97,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    <!--This is used to define the widget at the top of the page informs the user that the app is
+    connected to the robot.-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
@@ -103,6 +114,8 @@
         app:titleMargin="4dp"
         app:titleTextColor="#050505" />
 
+    <!--This is used to define the central icon on the page. This icon is to be replaced by
+    an image or model of the robot.-->
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="72dp"
@@ -117,21 +130,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/bw3"
-        android:layout_width="95dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginEnd="264dp"
-        android:layout_marginBottom="379dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#FF9800"
-        android:text="BW3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    <!--This is used to define the button for translational movement in the forward direction
+    of axis 1.-->
     <Button
         android:id="@+id/fw1"
         android:layout_width="87dp"
@@ -147,36 +147,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/bw2"
-        android:layout_width="91dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="270dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="381dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#FF9800"
-        android:text="BW2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/fw3"
-        android:layout_width="88dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="270dp"
-        android:layout_marginEnd="53dp"
-        android:layout_marginBottom="272dp"
-        android:layout_weight="1"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#FF9800"
-        android:text="FW3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    <!--This is used to define the button for translational movement in the forward direction
+    of axis 2.-->
     <Button
         android:id="@+id/fw2"
         android:layout_width="96dp"
@@ -192,6 +164,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button for translational movement in the forward direction
+    of axis 3.-->
+    <Button
+        android:id="@+id/fw3"
+        android:layout_width="88dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="272dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#FF9800"
+        android:text="FW3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--This is used to define the button for translational movement in the backward direction
+    of axis 1.-->
     <Button
         android:id="@+id/bw1"
         android:layout_width="90dp"
@@ -207,6 +198,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button for translational movement in the backward direction
+    of axis 2.-->
+    <Button
+        android:id="@+id/bw2"
+        android:layout_width="91dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="381dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#FF9800"
+        android:text="BW2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--This is used to define the button for translational movement in the backward direction
+    of axis 3.-->
+    <Button
+        android:id="@+id/bw3"
+        android:layout_width="95dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="264dp"
+        android:layout_marginBottom="379dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#FF9800"
+        android:text="BW3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--This is used to define the button for circular manipulation of the robot.-->
     <Button
         android:id="@+id/circular"
         android:layout_width="127dp"
@@ -222,6 +248,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button for rectangular manipulation of the robot.-->
     <Button
         android:id="@+id/rectangular"
         android:layout_width="178dp"
@@ -237,6 +264,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button for transition to activity_main6. This page contains
+    a list of additional manipulation modes.-->
     <Button
         android:id="@+id/addNew"
         android:layout_width="wrap_content"
@@ -250,7 +279,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
+    <!--This is used to define the label for Extra Fine Retract.-->
     <TextView
         android:id="@+id/textView5"
         android:layout_width="200dp"
@@ -264,6 +293,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!--This is used to define the label for Fine Retract.-->
     <TextView
         android:id="@+id/textView4"
         android:layout_width="163dp"
@@ -277,6 +307,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!--This is used to define the label for Large Retract.-->
     <TextView
         android:id="@+id/textView3"
         android:layout_width="163dp"
@@ -289,19 +320,6 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/largeup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="184dp"
-        android:layout_weight="1"
-        android:clickable="true"
-        app:backgroundTint="#3F51B5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/arrow_up_float" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
