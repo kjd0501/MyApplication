@@ -48,3 +48,18 @@ The two buttons at the top of the screen are used for circular and rectangular m
 By pressing on the Add New button, the user will be redirected to [activity_main6.xml](https://github.com/kjd0501/MyApplication/blob/main/app/src/main/res/layout/activity_main6.xml).
 
 ![image](https://user-images.githubusercontent.com/107410292/187679527-1c7a04db-acb0-44bf-98ad-1ccfad7cf488.png)
+
+## Additional Folders
+The .idea folder holds the settings for the IDE the app is being developed on.
+
+The app folder holds the main logic for the working of the app including the xml files regarding the layouts.
+
+The graddle/wrappers folder is used for app distribution.
+
+## Tool and Programming Language Used
+
+The app is built using Java for the logic and xml to hold the layout of the app. Additionally, the IDE used is Android Studio as this app is meant to be used on Android devices. The commands are sent to the robot using ROS frameworks such as topic, service, publishers and subscribers.
+
+## Testing
+
+So far, the app has not been tested on the robot as the ROS nodes created have not been tested. The app is successfully able to send data across a bluetooth socket as this was tested by connecting two phones to each other and sending data across it. The app has also been simulated using the emulator on Android Studio. Additonal tests are yet to be run. For workflow test when no device is connected, the body for the send method in the script needs to be commented out as there is a check to see if the app is continually connected to a device via bluetooth present within that method.
