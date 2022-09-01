@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--This is used to define individual items on the recycler view.-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
     android:textAlignment="center">
 
+    <!---This is used to define the place holder for the name of the manipulation mode.-->
     <TextView
         android:id="@+id/manip_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:backgroundTint="#FFFFFF"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/goToAction"
+        app:layout_constraintEnd_toStartOf="@+id/goToAction"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!--This is used to define the button to access the desired manipulation mode.-->
     <Button
         android:id="@+id/goToAction"
         android:layout_width="wrap_content"
@@ -24,5 +29,9 @@
         android:paddingRight="16dp"
         android:text="Go"
         android:textColor="#FFFFFF"
-        android:textSize="10sp" />
-</LinearLayout>
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/manip_name"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

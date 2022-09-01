@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!--This is used to define the additional manipulation page of the app.-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -14,18 +14,8 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="158dp">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_weight="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+        <!--This is used to define the widget at the top of the page informs the user that the app is
+        connected to the robot.-->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -40,6 +30,8 @@
             app:titleMargin="4dp"
             app:titleTextColor="#050505" />
 
+        <!--This is used to define the widget toward the top of the page to inform the user that the current
+        page is regarding the advanced manipulation modes. -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar3"
             android:layout_width="match_parent"
@@ -52,11 +44,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0"
             app:popupTheme="@style/Theme.MyApplication.PopupOverlay"
             app:title="          Advanced Manipulation Modes"
             app:titleMargin="4dp"
             app:titleTextColor="#050505" />
 
+        <!--This is used to define the list view for the different manipulation modes available.
+        These need to be added manually as of now.-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/manipList"
             android:layout_width="335dp"

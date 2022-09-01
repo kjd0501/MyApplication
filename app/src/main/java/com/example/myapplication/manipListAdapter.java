@@ -12,19 +12,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+/**
+ * This class is used as an adapter for a view holder in the recylcler view.
+ */
 public class manipListAdapter extends
     RecyclerView.Adapter<manipListAdapter.ViewHolder> {
 
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
     public class ViewHolder extends RecyclerView.ViewHolder {
-        // Your holder should contain a member variable
-        // for any view that will be set as you render a row
-        public TextView name;
-        public Button goToAction;
+        // variables for view holder in a single row
+        public TextView name;//name of the manipulation mode
+        public Button goToAction;//button used to access mode
 
-        // We also create a constructor that accepts the entire item row
-        // and does the view lookups to find each subview
+        /**
+         * This is used to create a view holder for a single row.
+         * @param itemView is the custom view
+         */
         public ViewHolder(View itemView) {
             // Stores the itemView in a public final member variable that can be used
             // to access the context from any ViewHolder instance.
@@ -35,15 +39,17 @@ public class manipListAdapter extends
         }
     }
 
-    // Store a member variable for the contacts
+    // Store a member variable for the manipulator mode
     private List<AdvancedManip> manip;
 
-    // Pass in the contact array into the constructor
+    // Pass in the manipulator mode array into the constructor
     public manipListAdapter(List<AdvancedManip> manips) {
         manip = manips;
     }
 
-
+    /**
+     * This is used to inflate a custom view holder.
+     */
     @NonNull
     @Override
     public manipListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -58,6 +64,10 @@ public class manipListAdapter extends
         return viewHolder;
     }
 
+    /**
+     * This is used to define the placeholder for the name and action in the custom view
+     * holder.
+     */
     @Override
     public void onBindViewHolder(manipListAdapter.ViewHolder holder, int position) {
         // Get the data model based on position
